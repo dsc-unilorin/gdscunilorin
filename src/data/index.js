@@ -23,4 +23,4 @@ const generateRandomPeopleArray = ( count ) =>
     return peopleArray;
 };
 
-export const peopleData = generateRandomPeopleArray( 10 );
+export const peopleData = generateRandomPeopleArray( 40 );

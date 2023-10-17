@@ -18,20 +18,20 @@ export const CoreTeam = () =>
             </Container>
 
             <Container maxW='container.lg'>
-                <Grid templateColumns={ 'repeat(4, 1fr)' } gap={ 12 } justifyContent={ "center" }>
+                <Grid templateColumns={ { base: 'repeat(2, 1fr)', md: 'repeat(4, 1fr)' } } gap={ 8 } justifyContent={ "center" } alignContent={ "center" }>
 
                     { displayedPeopleData.map( ( person, index ) => (
                         < GridItem w='100%' h='auto' key={ index } >
-                            <Image src={ person.imageurl } alt={ person.name } width={ 180 } height={ 180 } borderRadius={ 8 } />
-                            <Box className="detailed_container" marginY={ 6 }>
-                                <Text>{ person.fullName }</Text>
-                                <Text className="small" fontWeight="thin" fontSize={ 'xx-small  ' } textAlign={ 'left' } textTransform={ "uppercase" } marginY={ "2" }>{ person.role }</Text>
+                            <Image src={ person.imageurl } alt={ person.name } width={ 180 } height={ 180 } borderRadius={ 12 } />
+                            <Box className="detailed_container" marginY={ 4 }>
+                                <Text fontSize={ "14" } fontWeight={ "bold" }>{ person.fullName }</Text>
+                                <Text className="small" fontWeight="normal" fontSize={ 'xx-small  ' } textAlign={ 'left' } textTransform={ "uppercase" } marginY={ "2" }>{ person.role }</Text>
 
                                 <HStack spacing={ 2 } className="social_handle">
 
-                                    <Link href={ person.socialLinks.twitter } target="_blank"><Image src={ "/icons/twitter_icon.svg" } width={ 5 } height={ 5 } /></Link>
-                                    <Link href={ person.socialLinks.linkedin } target="_blank"><Image src={ "/icons/linkedin_icon.svg" } width={ 5 } height={ 5 } /></Link>
-                                    <Link href={ person.socialLinks.dribbble } target="_blank"><Image src={ "/icons/dribbble_icon.svg" } width={ 5 } height={ 5 } /></Link>
+                                    <Link href={ person.socialLinks.twitter } target="_blank"><Image src={ "/icons/twitter_icon.svg" } width={ 4 } height={ 4 } /></Link>
+                                    <Link href={ person.socialLinks.linkedin } target="_blank"><Image src={ "/icons/linkedin_icon.svg" } width={ 4 } height={ 4 } /></Link>
+                                    <Link href={ person.socialLinks.dribbble } target="_blank"><Image src={ "/icons/dribbble_icon.svg" } width={ 4 } height={ 4 } /></Link>
                                 </HStack>
 
                             </Box>
@@ -50,6 +50,9 @@ export const CoreTeam = () =>
                             paddingY={ 2 }
                             borderRadius={ 6 }
                             backgroundColor={ "#34A853" }
+                            textColor={ "#f4f4f4" }
+                            _hover={ { backgroundColor: "#120" } }
+
                             onClick={ handleViewAllClick }
                         >
                             Show Less
@@ -62,6 +65,8 @@ export const CoreTeam = () =>
                             paddingY={ 2 }
                             borderRadius={ 6 }
                             backgroundColor={ "#34A853" }
+                            textColor={ "#f4f4f4" }
+                            _hover={ { backgroundColor: "#120" } }
                             onClick={ handleViewAllClick }
                         >
                             View All
