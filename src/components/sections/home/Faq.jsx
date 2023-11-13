@@ -28,6 +28,7 @@ export const FAQ = () => {
           flexShrink={0}
           borderRadius={"8px"}
           background={"#FFC107"}
+          cursor={'pointer'}
         >
           {/* <Image
           src="./../../src/assets/chevron-right.svg"
