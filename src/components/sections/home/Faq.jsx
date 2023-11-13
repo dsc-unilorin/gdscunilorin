@@ -23,6 +23,7 @@ export const FAQ = () => {
           padding={"16px 40px"}
           justifyContent={"center"}
           alignItems={"center"}
+          alignSelf={'center'}
           gap={"12px"}
           flexShrink={0}
           borderRadius={"8px"}
