@@ -1,5 +1,5 @@
 import React from "react";
-import { Flex, Box, Image, Text } from "@chakra-ui/react";
+import { Flex, Box, Image, Text, useColorModeValue } from "@chakra-ui/react";
 import { FaqList } from "./FaqList";
 export const FAQ = () => {
   return (
@@ -8,7 +8,7 @@ export const FAQ = () => {
       flexDirection={"column-reverse"}
       align={"center"}
       padding={"110px 55px 53px 70px"}
-      backgroundColor={"#E3F2FD"}
+      bg={useColorModeValue("#E3F2FD", "#4285F407")}
     >
       <Box
         display={"flex"}
@@ -23,12 +23,12 @@ export const FAQ = () => {
           padding={"16px 40px"}
           justifyContent={"center"}
           alignItems={"center"}
-          alignSelf={'center'}
+          alignSelf={"center"}
           gap={"12px"}
           flexShrink={0}
           borderRadius={"8px"}
           background={"#FFC107"}
-          cursor={'pointer'}
+          cursor={"pointer"}
         >
           {/* <Image
           src="./../../src/assets/chevron-right.svg"
@@ -66,7 +66,7 @@ export const FAQ = () => {
               lineHeight={"96px"}
               fontWeight={700}
               fontSize={"48px"}
-              color={"#1F1F1F"}
+              color={useColorModeValue("#1F1F1F", "#fff")}
             >
               Frequently Asked Questions
             </Text>
