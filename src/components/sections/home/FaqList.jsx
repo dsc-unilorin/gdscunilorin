@@ -1,12 +1,16 @@
-import { React, useState } from "react";
+import { React, useContext, useState } from "react";
 import { Box, Text, Image } from "@chakra-ui/react";
 
 import { faqs } from "../../../data/faq";
-
+import { ThemeContext } from "../../../provider/ThemeProvider";
 
 export const FaqList = () => {
   const [click, setClick] = useState(null);
   const [clicked, setClicked] = useState(false);
+
+  const { currentTheme } = useContext(ThemeContext);
+  const background = currentTheme.colors.background;
+  const primaryColor = currentTheme.colors.primary;
 
   const handleClick = (id) => {
     setClicked(!clicked);
@@ -39,7 +43,8 @@ export const FaqList = () => {
         style={{
           ...styles.drop,
           border: click === faq.id ? "none" : "1px solid #4285F4",
-          background: click === faq.id ? "#4285F4" : "inherit",
+          // background: click === faq.id ? "#4285F4" : "inherit",
+          background: primaryColor,
         }}
         display={"flex"}
       >
@@ -57,33 +62,30 @@ export const FaqList = () => {
         )}
       </Box>
       {click === faq.id ? (
-          <Box
+        <Box
           display={"flex"}
-          width={'660px'}
+          width={"660px"}
           height={"68px"}
           padding={"18px 22px 18px 30px"}
           justifyContent={"flex-end"}
           alignItems={"center"}
           borderRadius={"5.299px"}
-          background={"#BBDEFB"}
+          background={background}
         >
           <Text
             fontFamily={"Open Sans"}
             lineHeight={"15.898px"}
             fontWeight={400}
             fontSize={"10.598px"}
-            color={"#28374B"}
+            color={primaryColor}
           >
-            Lorem ipsum dolor sit amet consectetur. Commodo ac sed vitae risus dui
-            quisque. Venenatis placerat faucibus rutrum viverra. Egestasn ulla
-            porta dictum at a. Urna etiam nulla arcu parturient. Lorem ipsum dolor
-            sit amet cons
+            Lorem ipsum dolor sit amet consectetur. Commodo ac sed vitae risus
+            dui quisque. Venenatis placerat faucibus rutrum viverra. Egestasn
+            ulla porta dictum at a. Urna etiam nulla arcu parturient. Lorem
+            ipsum dolor sit amet cons
           </Text>
         </Box>
-        ) : (
-          null
-        )}
-      
+      ) : null}
     </li>
   ));
   return <>{listItems}</>;

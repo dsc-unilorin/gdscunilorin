@@ -1,29 +1,32 @@
-import { ChakraProvider, extendTheme } from '@chakra-ui/react'
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 // import './App.css'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Homepage from './pages/index.jsx'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Homepage from "./pages/index.jsx";
+import { ThemeProvider } from "./provider/ThemeProvider.jsx";
 
 // 2. Extend the theme to include custom colors, fonts, etc
 const colors = {
   brand: {
-    900: '#1a365d',
-    800: '#153e75',
-    700: '#2a69ac',
+    900: "#1a365d",
+    800: "#153e75",
+    700: "#2a69ac",
   },
-}
+};
 
-const theme = extendTheme({ colors })
+const theme = extendTheme({ colors });
 
 function App() {
   return (
-    <ChakraProvider theme={theme}>
-    <Router>
-      <Routes>
-        <Route name="home" path="/" element={<Homepage />} />
-      </Routes>
-    </Router>
-    </ChakraProvider>
-  )
+    // <ChakraProvider theme={theme}>
+    <ThemeProvider>
+      <Router>
+        <Routes>
+          <Route name="home" path="/" element={<Homepage />} />
+        </Routes>
+      </Router>
+    </ThemeProvider>
+    // </ChakraProvider>
+  );
 }
 
-export default App
+export default App;

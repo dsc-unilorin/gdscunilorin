@@ -1,14 +1,18 @@
-import React from "react";
-import { Flex, Box, Image, Text, useColorModeValue } from "@chakra-ui/react";
+import { Flex, Box, Image, Text } from "@chakra-ui/react";
 import { FaqList } from "./FaqList";
+import { useContext } from "react";
+import { ThemeContext } from "../../../provider/ThemeProvider";
 export const FAQ = () => {
+  const { currentTheme } = useContext(ThemeContext);
+  const background = currentTheme.colors.background;
+  const primaryColor = currentTheme.colors.primary;
   return (
     <Flex
       justify={"flex-end"}
       flexDirection={"column-reverse"}
       align={"center"}
       padding={"110px 55px 53px 70px"}
-      bg={useColorModeValue("#E3F2FD", "#4285F407")}
+      bg={background}
     >
       <Box
         display={"flex"}
@@ -43,10 +47,6 @@ export const FAQ = () => {
           >
             View All
           </Text>
-          {/* <Image
-          src="./../../src/assets/chevron-right.svg"
-          alt="Chevron Right"
-        ></Image> */}
         </Box>
         <Box
           display={"inline-flex"}
@@ -66,7 +66,7 @@ export const FAQ = () => {
               lineHeight={"96px"}
               fontWeight={700}
               fontSize={"48px"}
-              color={useColorModeValue("#1F1F1F", "#fff")}
+              color={primaryColor}
             >
               Frequently Asked Questions
             </Text>

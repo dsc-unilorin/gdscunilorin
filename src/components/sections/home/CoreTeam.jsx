@@ -12,7 +12,8 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react";
 import { peopleData } from "../../../data/index";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { ThemeContext } from "../../../provider/ThemeProvider";
 export const CoreTeam = () => {
   const [showAll, setShowAll] = useState(false);
   const displayedPeopleData = showAll ? peopleData : peopleData.slice(0, 8);
@@ -20,8 +21,12 @@ export const CoreTeam = () => {
   const handleViewAllClick = () => {
     setShowAll(!showAll);
   };
+
+  const { currentTheme } = useContext(ThemeContext);
+  const background = currentTheme.colors.background;
+  const primaryColor = currentTheme.colors.primary;
   return (
-    <Box paddingY={4} bg={useColorModeValue("#E3F2FD", "#4285F407")}>
+    <Box paddingY={4} bg={background}>
       <Container>
         <Text
           fontSize="4xl"
@@ -42,7 +47,7 @@ export const CoreTeam = () => {
           alignContent={"center"}
         >
           {displayedPeopleData.map((person, index) => (
-            <GridItem w="100%" h="auto" key={index}>
+            <GridItem w="100%" h="auto" key={index} color={primaryColor}>
               <Image
                 src={person.imageurl}
                 alt={person.name}
