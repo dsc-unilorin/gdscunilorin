@@ -6,7 +6,7 @@ function Homepage() {
   return (
     <>
       <Layout>
-        <Box p={4}>Main Content Here</Box>
+        {/* <Box p={4}>Main Content Here</Box> */}
         <CoreTeam />
         <FAQ />
       </Layout>

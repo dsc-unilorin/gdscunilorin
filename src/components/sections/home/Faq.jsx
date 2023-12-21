@@ -1,14 +1,18 @@
-import React from "react";
 import { Flex, Box, Image, Text } from "@chakra-ui/react";
 import { FaqList } from "./FaqList";
+import { useContext } from "react";
+import { ThemeContext } from "../../../provider/ThemeProvider";
 export const FAQ = () => {
+  const { currentTheme } = useContext(ThemeContext);
+  const background = currentTheme.colors.background;
+  const primaryColor = currentTheme.colors.primary;
   return (
     <Flex
       justify={"flex-end"}
       flexDirection={"column-reverse"}
       align={"center"}
       padding={"110px 55px 53px 70px"}
-      backgroundColor={"#E3F2FD"}
+      bg={background}
     >
       <Box
         display={"flex"}
@@ -23,12 +27,12 @@ export const FAQ = () => {
           padding={"16px 40px"}
           justifyContent={"center"}
           alignItems={"center"}
-          alignSelf={'center'}
+          alignSelf={"center"}
           gap={"12px"}
           flexShrink={0}
           borderRadius={"8px"}
           background={"#FFC107"}
-          cursor={'pointer'}
+          cursor={"pointer"}
         >
           {/* <Image
           src="./../../src/assets/chevron-right.svg"
@@ -43,10 +47,6 @@ export const FAQ = () => {
           >
             View All
           </Text>
-          {/* <Image
-          src="./../../src/assets/chevron-right.svg"
-          alt="Chevron Right"
-        ></Image> */}
         </Box>
         <Box
           display={"inline-flex"}
@@ -66,7 +66,7 @@ export const FAQ = () => {
               lineHeight={"96px"}
               fontWeight={700}
               fontSize={"48px"}
-              color={"#1F1F1F"}
+              color={primaryColor}
             >
               Frequently Asked Questions
             </Text>
