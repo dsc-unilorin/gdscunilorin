@@ -46,12 +46,12 @@ export const FaqList = () => {
         <Text style={{ textWrap: "nowrap" }}>{faq.question}</Text>
         {click === faq.id ? (
           <Image
-            src="./../../src/assets/chevron-down.svg"
+            src="icons/chevron-down.svg"
             alt="Chevron Down"
           ></Image>
         ) : (
           <Image
-            src="./../../src/assets/chevron-right.svg"
+            src="icons/chevron-right.svg"
             alt="Chevron Right"
           ></Image>
         )}

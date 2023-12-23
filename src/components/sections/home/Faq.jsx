@@ -30,10 +30,6 @@ export const FAQ = () => {
           background={"#FFC107"}
           cursor={'pointer'}
         >
-          {/* <Image
-          src="./../../src/assets/chevron-right.svg"
-          alt="Chevron Right"
-        ></Image> */}
           <Text
             fontFamily={"Open Sans"}
             lineHeight={"24px"}
@@ -43,10 +39,6 @@ export const FAQ = () => {
           >
             View All
           </Text>
-          {/* <Image
-          src="./../../src/assets/chevron-right.svg"
-          alt="Chevron Right"
-        ></Image> */}
         </Box>
         <Box
           display={"inline-flex"}
@@ -91,7 +83,7 @@ export const FAQ = () => {
             </ul>
             <Box width={"655px"} height={"436.234px"}>
               <Image
-                src="./../../src/assets/background-01-1536x1023.png"
+                src="background-01-1536x1023.png"
                 alt="FAQ Image"
               />
             </Box>
