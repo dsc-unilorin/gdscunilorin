@@ -52,7 +52,7 @@ export default function HeaderNavigation() {
           />
           <HStack spacing={8} alignItems={'center'} mx={{ base: 2, sm: 0 }}>
             <Box>
-              <Image src="./../../src/assets/gdsclogo.png" alt="GDSC Unilorin Logo" />
+              <Image src="gdsclogo.png" alt="GDSC Unilorin Logo" />
             </Box>
           </HStack>
           <HStack spacing={8} alignItems={'center'}  display={{ base: 'none', md: 'flex' }} bg={useColorModeValue('#4285F40D', '#4285F407')} padding={'20px 38px'} borderRadius={'30px'}>
