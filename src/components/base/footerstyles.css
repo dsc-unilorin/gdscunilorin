@@ -41,6 +41,8 @@
 .footer {
     margin-top: 10px;
     display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 .rightside{
     margin-left: 90px;
@@ -56,6 +58,8 @@
     padding: 5px;
     margin-top: 10px;  
     border-radius: 5px;
+    outline: none;
+    border-bottom: 1px solid rgb(46, 129, 231);
 }
 .btn{
     background-color: rgb(46, 129, 231);
@@ -66,7 +70,7 @@
 }
 .inputbox{
     display: inline-block; /* Ensures the div takes the size of its contents */
-    box-shadow: 8px 7px 5px rgba(50, 49, 49, 0.2); /* Adding shadow to the div */
+    /* box-shadow: 8px 7px 5px rgba(50, 49, 49, 0.2); Adding shadow to the div */
     /* padding: 10px; Adding padding to separate the shadow from the content */
     border-radius: 5px; /* Adding border-radius to match the content */
 }
@@ -108,4 +112,33 @@ p a {
 
 
 
-   
+@media screen and (max-width: 576px) {
+       .footer{
+            display: flex;
+            flex-direction: column;
+       }
+       .leftside{
+            text-align: center;
+       }
+       .icons{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+       }
+       .btn{
+            display: flex;
+            margin: 30px auto;
+       }
+       .rightside{
+            margin-top: 20px;
+            margin-bottom: 20px;
+            margin-left: 0;
+            width: 100%;
+            text-align: center;
+       }
+       .sentence{
+            text-align: center;
+            margin: 0px;
+            width: 100%;
+       }
+}
